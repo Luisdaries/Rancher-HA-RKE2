@@ -1,0 +1,13 @@
+token: K100f06055ecffc6d857abae5a47c79c0413e71dbf6499d8f3cfe97cd6a09831ca5::server:5387310f40b954e6df91893a41e23a78
+server: https://192.168.121.244:9345
+node-name: master-2
+tls-san:
+  - 192.168.121.239
+  - AMKUBDEVRKEN01B
+
+token: K100f06055ecffc6d857abae5a47c79c0413e71dbf6499d8f3cfe97cd6a09831ca5::server:5387310f40b954e6df91893a41e23a78
+server: https://192.168.121.244:9345
+node-name: master-3
+tls-san:
+  - 192.168.121.136
+  - AMKUBDEVRKEN02A

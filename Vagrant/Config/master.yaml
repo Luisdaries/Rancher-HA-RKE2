@@ -1,0 +1,4 @@
+tls-san:
+  - 192.168.121.37
+  - AMKUBDEVRKEN01A
+node-name: master-1
