@@ -1,44 +1,43 @@
-
 Vagrant.configure("2") do |config|
   config.vm.box = "generic/ubuntu2204"
   config.vm.box_version = "4.3.12"
 
-
-  # No se simplifica el levantamiento haciendo uso de ciclos o relacionados ya que se requiere la facil comprencion del Ejercicio
-  # Caracteristicas del Nodo maestro
-  config.vm.define "k3s-master-1" do |master|
-    master.vm.hostname = "AMKUBDEVRKEN01A" # Nombre del nodo maestro
-    master.vm.network "private_network", ip: "10.98.72.249" # IP del nodo maestro
-    master.vm.provider "virtualbox" do |vb|
-      vb.memory = "2048" # Memoria RAM del nodo maestro
-      vb.cpus = 2 # Numero de CPUs del nodo maestro
+  # Nodo maestro
+  config.vm.define "AMKUBDEVRKEN01A" do |master|
+    master.vm.hostname = "AMKUBDEVRKEN01A"
+    master.vm.network "private_network", ip: "10.98.72.101"
+    master.vm.provider "libvirt" do |lv|
+      lv.memory = 4096
+      lv.cpus = 2
     end
     master.vm.provision "shell", inline: <<-SHELL
       apt update
     SHELL
   end
-# Caracteristicas del Nodo trabajador 1
-  config.vm.define "k3s-master-2" do |worker|
-    worker.vm.hostname = "AMKUBDEVRKEN01B" # Nombre del nodo trabajador 1
-    worker.vm.network "private_network", ip: "10.98.111.17" # IP del nodo trabajador 1
-    worker.vm.provider "virtualbox" do |vb|
-      vb.memory = "2048" # Memoria RAM del nodo trabajador 1
-      vb.cpus = 2 # Numero de CPUs del nodo trabajador 1
+
+  # Nodo trabajador 1
+  config.vm.define "AMKUBDEVRKEN01B" do |worker|
+    worker.vm.hostname = "AMKUBDEVRKEN01B"
+    worker.vm.network "private_network", ip: "10.98.72.102"
+    worker.vm.provider "libvirt" do |lv|
+      lv.memory = 4096
+      lv.cpus = 2
     end
     worker.vm.provision "shell", inline: <<-SHELL
       apt update
     SHELL
   end
-# Caracteristicas del Nodo trabajador 2
-config.vm.define "k3s-master-3" do |worker_2|
-  worker_2.vm.hostname = "AMKUBDEVRKEN02A" # Nombre del nodo trabajador 2
-  worker_2.vm.network "private_network", ip: "10.98.74.212" # IP del nodo trabajador 2
-  worker_2.vm.provider "virtualbox" do |vb|
-    vb.memory = "2048" # Memoria RAM del nodo trabajador 2
-    vb.cpus = 2 # Numero de CPUs del nodo trabajador 2
+
+  # Nodo trabajador 2
+  config.vm.define "AMKUBDEVRKEN02A" do |worker_2|
+    worker_2.vm.hostname = "AMKUBDEVRKEN02A"
+    worker_2.vm.network "private_network", ip: "10.98.72.103"
+    worker_2.vm.provider "libvirt" do |lv|
+      lv.memory = 4096
+      lv.cpus = 2
+    end
+    worker_2.vm.provision "shell", inline: <<-SHELL
+      apt update
+    SHELL
   end
-  worker_2.vm.provision "shell", inline: <<-SHELL
-    apt update
-  SHELL
-end
 end

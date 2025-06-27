@@ -5,7 +5,6 @@ ping < IP >
 ```
 
 ---
-
 mkdir -p /etc/rancher/rke2/
 
 nano /etc/rancher/rke2/config.yaml 
@@ -19,6 +18,7 @@ Ejecutar
     systemctl start rke2-server.service
 ```
 
+/var/lib/rancher/rke2/bin/kubectl get nodes --kubeconfig /etc/rancher/rke2/rke2.yaml
 
 
 ---
