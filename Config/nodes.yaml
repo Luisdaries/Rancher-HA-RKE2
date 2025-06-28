@@ -1,11 +1,15 @@
-token: K10f6a11fe7faaff90b3f37e4137c2d3dccb7179cf805745d79fa2641b1bb478ca0::server:e5df0abffaf76d4d18ba54ed30a69543
+#Para el nodo AMKUBDEVRKEN01B
+token: K101289cc49352ecf54ef107e0c172047672e6f611ad94f7528c6ba57e4b76b0c3a::server:6c5de0ca98abbee93d0a8d3f0482e789
 server: https://10.98.72.101:9345
 node-name: master-2
 tls-san:
   - 10.98.72.102
   - AMKUBDEVRKEN01B
 
-token: K10f6a11fe7faaff90b3f37e4137c2d3dccb7179cf805745d79fa2641b1bb478ca0::server:e5df0abffaf76d4d18ba54ed30a69543
+---
+
+#Para el nodo AMKUBDEVRKEN02A
+token: K101289cc49352ecf54ef107e0c172047672e6f611ad94f7528c6ba57e4b76b0c3a::server:6c5de0ca98abbee93d0a8d3f0482e789
 server: https://10.98.72.101:9345
 node-name: master-3
 tls-san:
